@@ -284,8 +284,6 @@ MarketMate can be deployed on:
 - Railway
 - Any platform that supports a Dockerfile or a Python/FastAPI app
 
-Once deployed, add the live URL under **Demo** at the top of this README.
-
 ---
 
 # Why MarketMate?
