@@ -293,9 +293,3 @@ MarketMate can be deployed on:
 - Gives 3 genuinely different creative angles per request, not near-duplicate rewrites
 - Works even without an API key, so a demo never breaks
 - Simple, modular FastAPI codebase that's easy to explain in a project defense
-
----
-
-# License
-
-This project is licensed under the **MIT License**.
