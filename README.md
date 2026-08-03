@@ -8,7 +8,6 @@ Built as a Final Year AI & Data Science Project
 
 - **Live App:** https://marketmate-fu1n.onrender.com/
 - **PPTX:** https://docs.google.com/presentation/d/1MBop3FidEI0N8VbXwDZgL20H3IkXDJWJ/edit?usp=drivesdk&ouid=111890711508229540647&rtpof=true&sd=true
-- **Demo Video:** 
 
 ---
 
