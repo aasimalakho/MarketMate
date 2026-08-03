@@ -37,7 +37,7 @@ GOAL_CTA = {
     "Build Awareness": "Learn More →",
 }
 
-PLATFORM_WORD_LIMIT = {
+PLATFORM_WORD_RANGE = {
     "Instagram": (30, 60),
     "Facebook": (45, 80),
     "LinkedIn": (55, 90),
