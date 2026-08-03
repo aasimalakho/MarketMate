@@ -38,10 +38,10 @@ GOAL_CTA = {
 }
 
 PLATFORM_WORD_LIMIT = {
-    "Instagram": 60,
-    "Facebook": 80,
-    "LinkedIn": 90,
-    "Email Marketing": 120,
+    "Instagram": (30, 60),
+    "Facebook": (45, 80),
+    "LinkedIn": (55, 90),
+    "Email Marketing": (80, 120),
 }
 
 
@@ -65,7 +65,7 @@ def _cta(goal: str) -> str:
 
 
 def _build_prompt(req) -> str:
-    word_limit = PLATFORM_WORD_LIMIT.get(req.platform, 80)
+    word_min, word_max = PLATFORM_WORD_RANGE.get(req.platform, (45, 80))
     angle_lines = "\n".join(
         f'- "{a["key"]}": {a["instruction"]}' for a in ANGLES
     )
@@ -86,9 +86,13 @@ def _build_prompt(req) -> str:
         f"- Open with something specific and concrete (a feeling, a moment, a detail) — never "
         f"with \"Meet [product]\" or \"Introducing [product]\".\n"
         f"- Sound like a person who actually uses this, not a press release.\n"
-        f"- Stay under {word_limit} words. No hashtags, no CTA line — those are added separately.\n\n"
+        f"- Each version MUST be a full, complete piece of copy - {word_min} to {word_max} words. "
+        f"A one-line headline or a single short sentence is NOT acceptable; write complete "
+        f"sentences with real detail and flow, the way finished ad copy actually reads. "
+        f"No hashtags, no CTA line - those are added separately.\n\n"
         f"Write THREE completely different versions, one per angle below — different opening "
-        f"line, different structure, different specific detail each time:\n{angle_lines}\n\n"
+        f"line, different structure, different specific detail each time, each meeting the "
+        f"{word_min}-{word_max} word requirement:\n{angle_lines}\n\n"
         f'Respond ONLY with valid JSON, no other text: '
         f'{{"bold": "...", "warm": "...", "punchy": "..."}}'
     )
@@ -110,7 +114,7 @@ def _call_groq(prompt: str) -> dict:
         ],
         "temperature": 0.85,
         "top_p": 0.92,
-        "max_tokens": 500,
+        "max_tokens": 900,
         "response_format": {"type": "json_object"},
     }
     resp = requests.post(GROQ_API_URL, headers=headers, json=payload, timeout=GROQ_TIMEOUT)
