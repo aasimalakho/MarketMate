@@ -6,9 +6,9 @@ Built as a Final Year AI & Data Science Project
 
 ## Demo
 
-- **Live App:** _Not deployed yet — add your Render/Railway URL here once live_
-- **API Docs:** _Add your deployed URL + `/docs` here once live_
-- **Demo Video:** _Add a link here once recorded_
+- **Live App:** https://marketmate-fu1n.onrender.com/
+- **PPTX:** 
+- **Demo Video:** 
 
 ---
 
